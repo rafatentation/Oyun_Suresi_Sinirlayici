@@ -35,7 +35,7 @@ Sistem aşağıdaki 5 girdi üzerinden çalışır:
 
 ## 🛠 Kurulum
 
-```bash
+
 pip install numpy matplotlib scikit-fuzzy
 
 🚀 Uygulamanın Başlatılması
