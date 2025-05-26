@@ -40,7 +40,7 @@ pip install numpy matplotlib scikit-fuzzy
 🚀 Uygulamanın Başlatılması
 python oyun_suresi_sinirlayici.py
 
-📂 Proje Dosya Yapısı
+## 📂 Proje Dosya Yapısı
 
 ```bash
 ├── oyun_suresi_sinirlayici.py
@@ -48,7 +48,7 @@ python oyun_suresi_sinirlayici.py
 │   └── interface_screenshot.png
 └── README.md
 ``` 
-📌 Girdilerin Tanımlanması
+## 📌 Girdilerin Tanımlanması
 ```bash
 time_of_day = ctrl.Antecedent(np.arange(0, 24, 1), 'time_of_day')
 → 0-23 saat aralığında günün saatini temsil eder.
@@ -66,7 +66,7 @@ previous_play = ctrl.Antecedent(np.arange(0, 361, 1), 'previous_play')
 → Önceki gün oynanan oyun süresi. 0–360 dakika aralığında.
 ```
 
-📌 Çıktıların Tanımlanması
+## 📌 Çıktıların Tanımlanması
 ```bash
 break_duration = ctrl.Consequent(np.arange(0, 61, 1), 'break_duration')
 → Verilecek mola süresi. 0–60 dakika aralığında önerilir.
@@ -75,7 +75,7 @@ allowed_play = ctrl.Consequent(np.arange(0, 241, 1), 'allowed_play')
 → İzin verilen oyun süresi. 0–240 dakika aralığında önerilir.
 ```
 
-📊 Üyelik Fonksiyonları
+## 📊 Üyelik Fonksiyonları
 ```bash
 Günün Saati
 time_of_day['morning'] = fuzz.trimf(time_of_day.universe, [0, 6, 12])
@@ -114,7 +114,7 @@ allowed_play['moderate'] = fuzz.trimf(allowed_play.universe, [90, 150, 180])
 allowed_play['long'] = fuzz.trimf(allowed_play.universe, [150, 240, 240])
 ```
 
-🔁 Bulanık Mantık Kuralları
+## 🔁 Bulanık Mantık Kuralları
 ```bash
 rules = [
     ctrl.Rule(is_school_day['yes'] & time_of_day['night'], allowed_play['very_short']),
@@ -135,7 +135,7 @@ rules = [
 ]
 ```
 
-💻 Arayüz Özellikleri
+## 💻 Arayüz Özellikleri
 Tkinter kullanılarak yapılmıştır.
 
 Giriş alanları:
@@ -150,13 +150,13 @@ Dropdown menüler
 
 "GRAFİKLER" butonu ile üyelik fonksiyonları matplotlib ile görselleştirilir.
 
-📊 Örnek Çıktı
+## 📊 Örnek Çıktı
 
-⏱ Önerilen Mola Süresi: 30 dakika
-🎮 İzin Verilen Oyun Süresi: 90 dakika
+## ⏱ Önerilen Mola Süresi: 30 dakika
+## 🎮 İzin Verilen Oyun Süresi: 90 dakika
 
-❗ Gözleriniz çok yorgun, 15-20 dakika gözlerinizi dinlendirin
-🌙 Geç saatte oyun oynamak uyku düzeninizi bozabilir
+## ❗ Gözleriniz çok yorgun, 15-20 dakika gözlerinizi dinlendirin
+## 🌙 Geç saatte oyun oynamak uyku düzeninizi bozabilir
 
 
 
