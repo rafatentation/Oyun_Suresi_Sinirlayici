@@ -1,2 +1,1 @@
-# Akıllı Egzersiz Planlayıcı (Fitness Coach)
-
+# Oyun Süresi Sınırlayıcı (Ebeveyn Yardımcı)
