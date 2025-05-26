@@ -61,3 +61,26 @@ Gerekli kütüphaneleri yüklemek için:
 ```bash
 pip install numpy matplotlib scikit-fuzzy
 
+
+
+🚀 Projeyi Çalıştırma
+
+1. Depoyu klonlayın:
+git clone https://github.com/kullaniciadi/oyun_suresi_sinirlayici.git
+
+2. Proje klasörüne geçin:
+cd oyun_suresi_sinirlayici
+
+3. Uygulamayı başlatın:
+python main.py
+
+📝 Notlar
+Arayüz, sade ve sezgisel bir kullanıcı deneyimi için tasarlanmıştır.
+
+Bulanık sistem kuralları genişletilebilir ve özelleştirilebilir yapıdadır.
+
+Üyelik fonksiyonları ve kurallar üzerinden değişiklik yaparak sistem hassasiyeti kolayca ayarlanabilir.
+
+
+
+
