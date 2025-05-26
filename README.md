@@ -35,19 +35,19 @@ Sistem aşağıdaki 5 girdi üzerinden çalışır:
 
 ## 🛠 Kurulum
 
-```bash
 pip install numpy matplotlib scikit-fuzzy
 
 🚀 Uygulamanın Başlatılması
 python oyun_suresi_sinirlayici.py
 
 📂 Proje Dosya Yapısı
-.
+
+```bash
 ├── oyun_suresi_sinirlayici.py
 ├── assets/
 │   └── interface_screenshot.png
 └── README.md
-
+``` 
 📌 Girdilerin Tanımlanması
 time_of_day = ctrl.Antecedent(np.arange(0, 24, 1), 'time_of_day')
 → 0-23 saat aralığında günün saatini temsil eder.
