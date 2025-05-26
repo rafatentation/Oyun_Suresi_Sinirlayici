@@ -49,6 +49,7 @@ python oyun_suresi_sinirlayici.py
 └── README.md
 ``` 
 📌 Girdilerin Tanımlanması
+```bash
 time_of_day = ctrl.Antecedent(np.arange(0, 24, 1), 'time_of_day')
 → 0-23 saat aralığında günün saatini temsil eder.
 
@@ -63,16 +64,19 @@ eye_strain = ctrl.Antecedent(np.arange(0, 11, 1), 'eye_strain')
 
 previous_play = ctrl.Antecedent(np.arange(0, 361, 1), 'previous_play')
 → Önceki gün oynanan oyun süresi. 0–360 dakika aralığında.
+```
 
 📌 Çıktıların Tanımlanması
-
+```bash
 break_duration = ctrl.Consequent(np.arange(0, 61, 1), 'break_duration')
 → Verilecek mola süresi. 0–60 dakika aralığında önerilir.
 
 allowed_play = ctrl.Consequent(np.arange(0, 241, 1), 'allowed_play')
 → İzin verilen oyun süresi. 0–240 dakika aralığında önerilir.
+```
 
 📊 Üyelik Fonksiyonları
+```bash
 Günün Saati
 time_of_day['morning'] = fuzz.trimf(time_of_day.universe, [0, 6, 12])
 time_of_day['afternoon'] = fuzz.trimf(time_of_day.universe, [10, 14, 18])
@@ -108,8 +112,10 @@ allowed_play['very_short'] = fuzz.trimf(allowed_play.universe, [0, 0, 60])
 allowed_play['short'] = fuzz.trimf(allowed_play.universe, [30, 90, 120])
 allowed_play['moderate'] = fuzz.trimf(allowed_play.universe, [90, 150, 180])
 allowed_play['long'] = fuzz.trimf(allowed_play.universe, [150, 240, 240])
+```
 
 🔁 Bulanık Mantık Kuralları
+```bash
 rules = [
     ctrl.Rule(is_school_day['yes'] & time_of_day['night'], allowed_play['very_short']),
     ctrl.Rule(is_school_day['yes'] & time_of_day['evening'], allowed_play['short']),
@@ -127,6 +133,7 @@ rules = [
     ctrl.Rule(time_of_day['afternoon'] & is_school_day['no'], allowed_play['moderate']),
     ctrl.Rule(eye_strain['high'] & play_duration['long'], break_duration['long']),
 ]
+```
 
 💻 Arayüz Özellikleri
 Tkinter kullanılarak yapılmıştır.
