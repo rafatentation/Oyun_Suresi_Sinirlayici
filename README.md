@@ -1,1 +1,2 @@
-# Egzersiz-Uygulamasi
+# Akıllı Egzersiz Planlayıcı (Fitness Coach)
+
