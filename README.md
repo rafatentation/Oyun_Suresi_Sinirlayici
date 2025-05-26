@@ -154,8 +154,8 @@ Dropdown menüler
 
 ![Ekran şəkli 2025-05-26 060514](https://github.com/user-attachments/assets/719635f4-86c9-4ef6-9bbe-a32a3c1fc32e)
 
-## ⏱ Önerilen Mola Süresi: 30 dakika
-## 🎮 İzin Verilen Oyun Süresi: 90 dakika
+## ⏱ Önerilen Mola Süresi: 50 dakika
+## 🎮 İzin Verilen Oyun Süresi: 140 dakika
 
 ## ❗ Gözleriniz çok yorgun, 15-20 dakika gözlerinizi dinlendirin
 ## 🌙 Geç saatte oyun oynamak uyku düzeninizi bozabilir
