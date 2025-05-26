@@ -1,98 +1,63 @@
-🎮 Oyun Süresi Sınırlayıcı (Gençler için Ebeveyn Yardımı)
-Bu proje, bulanık mantık (fuzzy logic) temelli bir karar destek sistemidir. Amaç, gençlerin sağlıklı dijital alışkanlıklar kazanmasını sağlamak ve ebeveynlere oyun süresi yönetiminde destek olmaktır. Sistem, kullanıcının günün saatinden göz yorgunluğuna kadar farklı faktörleri değerlendirerek optimum oyun süresi ve mola süresi önermektedir.
+# 🕹️ Oyun Süresi Sınırlayıcı (Bulanık Mantık Tabanlı)
 
-🌟 Öne Çıkan Özellikler
-🔹 Akıllı Oyun Süresi Yönetimi
-Günün saatine göre öneri yapar (sabah, öğlen, akşam, gece)
+Bu proje, oyun oynama süresini kontrol altında tutmak ve oyuncunun durumuna göre oyun süresi önerisinde bulunmak amacıyla **bulanık mantık (fuzzy logic)** kullanan bir karar destek sistemidir. Kullanıcı arayüzüyle birlikte çalışan sistem; ekran süresi, oyuncu yaşı, göz yorgunluğu, dikkat düzeyi ve önceki mola süresi gibi parametreleri değerlendirerek **oyun süresi önerisi** sunar ve **mola uyarısında** bulunur.
 
-Okul günü ile hafta sonu ayrımı yapar
+---
 
-Göz yorgunluğunu dikkate alır
+## 🎯 Amaç
 
-Önceki gün oynanan sürelere göre sınırlandırma getirir
+Kullanıcının oyun başında veya oyun sırasında zihinsel ve fiziksel durumuna göre uygun oyun süresi tahmini yapmak ve gerektiğinde mola vermesi için öneride bulunmak.
 
-🔹 Çoklu Parametre Analizi
-Toplam 5 girdi, 2 çıktı ile değerlendirme yapılır:
+---
 
-Girdiler:
-Günün Saati (0–23 saat aralığı)
+## 🧠 Özellikler
 
-Bugünkü Oyun Süresi (0–360 dakika)
+### 📥 Girdi Değişkenleri (5 adet)
 
-Okul Günü Durumu (Evet / Hayır)
+- **Göz Yorgunluğu (0–10)**
+- **Dikkat Seviyesi (0–10)**
+- **Yaş (6–50 yaş)**
+- **Ekran Süresi (dk)**
+- **Son Mola Süresi (dk)**
 
-Göz Yorgunluğu (1–10 arası skala)
+### 📤 Çıktı Değişkenleri (2 adet)
 
-Önceki Gün Oyun Süresi (0–360 dakika)
+- **Oyun Süresi Önerisi (dk)**
+- **Mola Önerisi (Evet / Hayır)**
 
-Çıktılar:
-Önerilen Mola Süresi (0–60 dakika)
+### 📏 Bulanık Kurallar
 
-İzin Verilen Oyun Süresi (0–240 dakika)
+- Sistem 10’dan fazla bulanık mantık kuralı içerir (örnek: “Dikkat seviyesi düşük ve ekran süresi yüksekse, mola önerilir”).
 
-🔹 Kural Tabanı (15 Adet Bulanık Kural)
-python
-Kopyala
-Düzenle
-ctrl.Rule(is_school_day['yes'] & time_of_day['night'], allowed_play['very_short']),
-ctrl.Rule(eye_strain['high'], break_duration['long']),
-ctrl.Rule(previous_play['much'] & is_school_day['yes'], allowed_play['very_short'])
-Kurallar, oyun süresini sınırlandırmak ve gerektiğinde mola vermeyi önermek için çeşitli kombinasyonlar içerir.
+### 📈 Grafiksel Gösterim
 
-🖥 Kullanıcı Arayüzü (Tkinter)
-Modern ve kullanıcı dostu arayüz:
-Günün saatini, oyun süresini, okul gününü, göz yorgunluğunu ve önceki oyun süresini girmeye olanak tanır.
+- Girdi ve çıktı değişkenlerine ait **üyelik fonksiyonları**, matplotlib ile görselleştirilir.
 
-“HESAPLA” butonuyla önerilen süreleri hesaplar.
+### 📜 Kural Görüntüleme
 
-“GRAFİKLER” butonuyla tüm üyelik fonksiyonlarını görselleştirir (matplotlib ile çizilir).
+- Tüm bulanık mantık kuralları, ayrı bir pencerede kullanıcıya **metin olarak** sunulur.
 
-Örnek Çıktı:
-Kopyala
-Düzenle
-⏱ Önerilen Mola Süresi: 30 dakika
-🎮 İzin Verilen Oyun Süresi: 90 dakika
+### 🖥️ Kullanıcı Arayüzü
 
-❗ Gözleriniz çok yorgun, 15-20 dakika gözlerinizi dinlendirin
-🌙 Geç saatte oyun oynamak uyku düzeninizi bozabilir
-🛠 Teknik Detaylar
-Kullanılan Teknolojiler:
-Python 3.8+
+- **Tkinter** ile geliştirilmiş, kullanıcı dostu ve koyu temalı pencere arayüzü.
+- Girdi değerleri **slider (kaydırmalı çubuk)** ile girilir.
+- "Hesapla" butonuyla sonuçlar anlık olarak görüntülenir.
 
-scikit-fuzzy (bulanık mantık motoru)
+---
 
-Tkinter (grafik arayüz)
+## 🔧 Kullanılan Teknolojiler
 
-matplotlib (grafik çizimleri)
+- Python  
+- Tkinter (GUI)  
+- scikit-fuzzy (bulanık mantık motoru)  
+- matplotlib (grafik çizimi)
 
-numpy (sayısal işlemler)
+---
 
-Üyelik Fonksiyonları:
-Değişken	Kategoriler	Aralık
-Günün Saati	Sabah / Öğlen / Akşam / Gece	0–23
-Oyun Süresi	Kısa / Orta / Uzun	0–360 dk
-Göz Yorgunluğu	Düşük / Orta / Yüksek	1–10 skala
-Okul Günü	Evet / Hayır	0 veya 1 (Binary)
-Önceki Oyun Süresi	Az / Orta / Çok	0–360 dk
+## ⚙️ Kurulum
 
-Bu fonksiyonlar fuzz.trimf() ile üçgen üyelik şeklinde tanımlanmıştır.
+Gerekli kütüphaneleri yüklemek için:
 
-📦 Kurulum
-bash
-Kopyala
-Düzenle
+```bash
 pip install numpy matplotlib scikit-fuzzy
-Projenin ana dosyasını çalıştırmak için:
 
-bash
-Kopyala
-Düzenle
-python oyun_suresi_sinirlayici.py
-🔧 Geliştirici Notları
-Arayüz sınıfı OyunSuresiSinirlayici olarak tanımlanmıştır.
-
-Kullanıcıdan alınan girişler kontrol edilir, ardından ctrl.ControlSystemSimulation ile çıktı hesaplanır.
-
-Üyelik fonksiyonları görselleştirmeleri ayrı pencerede çizdirilir (matplotlib + TkAgg entegrasyonu).
-
-Program sonunda main bloğunda Tkinter GUI başlatılır.
