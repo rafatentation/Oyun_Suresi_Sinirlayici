@@ -152,6 +152,8 @@ Dropdown menüler
 
 ## 📊 Örnek Çıktı
 
+![Ekran şəkli 2025-05-26 051510](https://github.com/user-attachments/assets/0e55e942-b890-4b4a-9712-6284a771b764)
+
 ## ⏱ Önerilen Mola Süresi: 30 dakika
 ## 🎮 İzin Verilen Oyun Süresi: 90 dakika
 
