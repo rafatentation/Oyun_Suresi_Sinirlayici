@@ -35,10 +35,10 @@ Sistem aşağıdaki 5 girdi üzerinden çalışır:
 
 ## 🛠 Kurulum
 
-
+```bash
 pip install numpy matplotlib scikit-fuzzy
 
-🚀 Uygulamanın Başlatılması
+## 🚀 Uygulamanın Başlatılması
 python oyun_suresi_sinirlayici.py
 
 📂 Proje Dosya Yapısı
